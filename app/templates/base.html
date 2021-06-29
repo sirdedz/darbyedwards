@@ -38,24 +38,17 @@
         <div class="header">
             <div class="header-left">
                 <img src="{{ url_for('static', filename='assets/sportquizlogo.png') }}" alt="Shark Stakes LLC" onclick="toHome()">
-                <p><a href={{ url_for('results') }}>Results</a></p>
-                <p><a href={{ url_for('stats') }}>Stats</a></p>
-                <p><a href={{ url_for('about') }}>About</a></p>
+                <p><a href="#"></a>Results</a></p>
+                <p><a href="#">Stats</a></p>
+                <p><a href="#">About</a></p>
             </div>
             <div class="header-middle">
-
             </div>
-            {% if not current_user.is_authenticated %}
-                <div class="header-right">
-                    <p><a href={{ url_for('login') }}>Login/Register</a></p>
-                    <a href={{ url_for('login') }}> <i class="bi bi-person-circle"></i></a>
-                </div>
-            {% else %}
-                <div class="header-right">
-                    <p><a href={{ url_for('user') }}>{{current_user.username}}</a></p>
-                    <a href={{ url_for('user') }}> <i class="bi bi-person-circle"></i></a>
-                </div>
-            {% endif %}
+
+            <div class="header-right">
+                <p><a href="#">Username</a></p>
+                <a href="#"> <i class="bi bi-person-circle"></i></a>
+            </div>
         </div>
 
         <!-- CONTENT -->
@@ -64,8 +57,8 @@
         </div>
         <!-- FOOTER -->
         <div class="footer">
-            <p>Sport Trivia LLC</p>
-            <p>Proudly owned and founded by Darby Edwards & Samuel Kent</p>
+            <p>My personal webpage. </p>
+            <p>Created by Darby Edwards</p>
         </div>
     </body>
 </html>
