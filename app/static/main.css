@@ -1,6 +1,6 @@
 /*css to be used on all html files in the templates folder*/
 
-/*------css to be used globally throughout the website-------*/
+/*------css to be used globally throughout the website on desktop-------*/
 :root{
     --header_height: 80px;
     --grey1: rgba(0, 0, 0, 0.05);
@@ -22,6 +22,7 @@ body{
     color: var(--navy1);
     height: var(--header__height);
     width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
@@ -39,7 +40,7 @@ body{
     color: var(--navy1);
 }
 
-.header p:hover, a:hover{
+.header p:hover, a:hover, .header h3:hover{
     color: var(--green1);
     text-decoration: none;
     cursor: pointer;
@@ -110,6 +111,78 @@ body{
 .hidden{
     display: none;
 }
+
+.menu{
+    display: none;
+}
+
+/*------------------- MOBILE CSS --------------------*/
+@media (hover:none), (hover:on-demand){ 
+    body{
+        background-color: var(--grey1);
+    }
+
+    .header{
+        background-color: white;
+        color: var(--navy1);
+        height: var(--header__height);
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        justify-content: center;
+    }
+
+    .header-left p, .header-middle, .header-right{
+        display: none;
+    }
+
+    .header-left{
+        background-color: white;
+        color: var(--navy1);
+        height: var(--header__height);
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        justify-items: center;
+    }
+
+    .header-middle{
+        display: none;
+    }
+
+    .title{
+        width: 100%;
+        display: flex;
+    }
+
+    .title *{
+        display: flex;
+        padding: 0;
+    }
+
+    .menu{
+        display: flex;
+        padding-right: 10px;
+    }
+
+    .menu i{
+        color: var(--navy1);
+        align-items: center;
+    }
+
+    .header-right{
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+
+    .content{
+        background-color: rgba(0,0,0,0);
+    }
+
+  } 
+
 
 /*------------------- INDEX.HTML --------------------*/
 
