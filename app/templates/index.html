@@ -3,8 +3,120 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>
-        Sample content
+    <div class="index">
+        <div class="about-me">
+            <img id="profilepic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+            <p>
+                <i class="bi bi-chat-right-text-fill" style="padding-right: 1em"></i>0413 870 180
+                <br>
+                <i class="bi bi-envelope-fill" style="padding-right: 1em"></i>darbyedwards1@gmail.com
+            </p>
+            <p>Currently in my penultimate year of a bachelor’s degree studying Commerce and majoring in Economics and Engineering Science, specializing in software engineering, with a direct pathway into Masters of Engineering upon completion of my bachelor’s Degree. Expecting to complete my bachelor’s degree at the end of 2021.</p>
+        </div>
+
+
+
+
+        <div class="projects">
+            <!-- BOOTSTRAP CAROUSEL -->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- CAROUSEL INDICATORS -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- CAROUSEL SLIDES -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='Assets/citibank.jpg') }}" alt="Shark Stakes LLC">
+                        <div class="carousel-caption">
+                            <h5>Citibank Global Markets Challenge 2020</h5>
+                            <p>Myself and a group of four in a competition to create a global asset portfolio with a six-month time horizon.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='Assets/logo1.jpg') }}" alt="Shark Stakes LLC2">
+                        <div class="carousel-caption">
+                            <h5>SharkStakes LLC</h5>
+                            <p>A web application project for University, SharkStakes is a sports quiz website with functionality for creating, completing and submitting quizzes and tracking your progress through an account system.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='Assets/game.jpg') }}" alt="Shark Stakes LLC3">
+                        <div class="carousel-caption">
+                            <h5>Simple Python3 Game</h5>
+                            <p>This simple python game is an implementation for server-side functionality to allow up to four players per game and handle connection and disconnection correctly.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAROUSEL NAVIGATION-->
+                <a class="carousel-control-prev" role="button" data-slide="prev" href="#carousel">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" role="button" data-slide="next" href="#carousel">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="interests">
+            <h3>Interests</h3>
+            <div id="interests-list">
+                <ul>
+                    <li>Software Development</li>
+                    <li>Managing Capital</li>
+                    <li>Economics</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Private Equity</li>
+                    <li>Cyber Security</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <div class="skills">
+            <h3>Skills</h3>
+            <div class="skills-container">
+                <div class="skills-left">
+                    <ul>
+                        <li><i class="devicon-html5-plain" style="color: #e34c26"></i>HTML</li>
+                        <li><i class="devicon-javascript-plain" style="color: #F0DB4F"></i>JavaScript</li>
+                        <li><i class="devicon-css3-plain" style="color: #264de4"></i>CSS</li>
+                    </ul>
+                </div>
+                <div class="skills-right">
+                    <ul>
+                        <li><i class="devicon-java-plain" style="color: #f89820"></i>Java</li>
+                        <li><i class="devicon-c-plain" style="color: purple"></i>C99</li>
+                        <li><i class="devicon-python-plain" style="color: #4B8BBE"></i>Python</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <div class="contact">
+            <h5>Contact Me</h5>
+            <p>I would love to hear from you! reach me at any of the following:</p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/darby-edwards-17bb1917b"><i class="bi bi-linkedin"></i>LinkedIn</a></li>
+                <li><i class="bi bi-chat-right-text-fill"></i>0413 870 180</li>
+                <li><i class="bi bi-envelope-fill"></i>darbyedwards1@gmail.com</li>
+            </ul>
+        </div>
     </div>
 
 {% endblock %}

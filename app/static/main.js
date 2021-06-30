@@ -5,6 +5,11 @@ function toHome(){
     window.location.replace("/");
 }
 
+$('.carousel').carousel({
+    interval: 10000
+});
+
+
 function menu(){
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         $(".header-left").children().each(function(){
@@ -26,6 +31,11 @@ function menu(){
             $(".menu i").removeClass("bi-caret-up-fill");
         }
     }
+}
+
+function imageSize(){
+    var ch = $('#profilepic').height();
+    $('#profilepic').css({'width':ch+'px'});
 }
 
 //INDEX.HTML
