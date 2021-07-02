@@ -1,0 +1,65 @@
+<!-- CITIBANK GLOBAL MARKETS CHALLENGE PAGE -->
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="citi">
+        <h3 id="citi-title">
+            Citibank Global Markets Challenge
+        </h3>
+
+        <div id="citi-summary">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  
+                <br> <br>  
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+
+        <div id="citi-pdf">
+            <object id="pdfviewer-web" data="{{ url_for('static', filename='Assets/CitibankSlides.pdf') }}" type="application/pdf" width="100%" height="100%"> </object>
+            <iframe id="pdfviewer-mobile" src="https://drive.google.com/file/d/1t195Wnsa5KgrD_X_UcC0SVN_uzjAHsM_/preview" allow="autoplay"></iframe>
+        </div>
+
+        <br>
+        <hr>
+
+        <div id="citi-team-members">
+            <h5>Team Members</h5>
+            <table>
+                <tr>
+                    <td>
+                        <img class="teampic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+                    </td>
+                    <td>
+                        Darby Edwards
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="teampic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+                    </td>
+                    <td>
+                        Jack Joyce
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="teampic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+                    </td>
+                    <td>
+                        Samuel Kent
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="teampic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+                    </td>
+                    <td>
+                        Jack Birch
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

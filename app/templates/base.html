@@ -12,6 +12,8 @@
 
         <!-- LOCAL CSS FILES -->
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='python_game.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='citi.css') }}">
 
         <!-- BOOTSTRAP ICONS CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -29,6 +31,13 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="{{ url_for('static', filename='main.js') }}"></script>
 
+        <!-- SLICK -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick-theme.css') }}"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+
 
         {% if title %}
         <title>{{title}} - Darby Edwards</title>
@@ -44,8 +53,14 @@
                     <a href="#" class="menu"><i class="bi bi-caret-down-fill"></i></a>
                     <h3><a href="#"></a>Darby Edwards</a></h3>
                 </div>
-                <p><a href="#">Projects</a></p>
-                <p><a href="#">Contact</a></p>
+                {% if home != 1 %}
+                    <p><a href='{{ url_for("index", home=1) }}'>Home</a></p>
+                {% else %}
+                    <p onclick="find('projects')"><a href="#">Projects</a></p>
+                    <p onclick="find('interests')"><a href="#">Interests</a></p>
+                    <p onclick="find('skills')"><a href="#">Skills</a></p>
+                    <p onclick="find('contact')"><a href="#">Contact</a></p>
+                {% endif %}
             </div>
             <div class="header-middle">
             </div>
@@ -53,7 +68,7 @@
             <div class="header-right">
                 <a href="https://www.linkedin.com/in/darby-edwards-17bb1917b"> <i class="bi bi-linkedin"></i></a>
                 <a href="https://github.com/sirdedz/"> <i class="bi bi-github"></i></a>
-                <a href="#"><i class="bi bi-envelope-fill"></i></a>
+                <a href="mailto:darbyedwards1@gmail.com"><i class="bi bi-envelope-fill"></i></a>
             </div>
         </div>
 
@@ -61,6 +76,10 @@
         <div class="content">
             {% block content %}{% endblock %}
         </div>
+
+        <!-- AUTO SCROLLER -->
+        <div id="totop" onclick="toTop()"><i class="bi bi-chevron-double-up"></i></div>
+
         <!-- FOOTER -->
         <div class="footer">
             <p>My personal webpage. </p>

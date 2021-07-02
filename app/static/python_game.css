@@ -1,0 +1,134 @@
+.py-game{
+    color: black;
+}
+
+.py-title{
+    padding: 2em;
+}
+
+.py-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 4em;
+}
+
+.py-container *{
+    width: 50%;
+    padding: 1em;
+}
+
+.py-container div{
+    width: 100%;
+    height: 100%;
+    background-color: var(--navy1);
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.py-container img{
+    object-fit: contain;
+    padding: 4em;
+}
+
+.py-text-right{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transform: translateX(50vw);
+}
+
+.py-text-left{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.py-right-animation{
+    animation-name: right-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.py-left-animation{
+    animation-name: left-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes right-in{
+    from{
+        transform: translateX(50vw);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes left-in{
+    from{
+        transform: translateX(-50vw);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+/*------------------- MOBILE CSS --------------------*/
+@media (hover:none), (hover:on-demand){ 
+    .py-container{
+        margin-top: 0;
+        height: auto;
+    }
+
+    .py-container:nth-of-type(even){
+        flex-direction: column;
+    }
+
+    .py-container:nth-of-type(odd){
+        flex-direction: column-reverse;
+    }
+
+    .py-container img{
+        width: 100vw;
+        padding: 1em;
+    }
+
+    .py-container div{
+        width: 100%;
+    }
+
+    .py-text-left{
+        margin-right: 2em;
+        padding: 3em 4em 3em 2em;
+    }
+
+    .py-text-right{
+        margin-left: 2em;
+        padding: 3em 2em 3em 4em;
+    }
+
+    @keyframes right-in{
+        from{
+            transform: translateX(50vw);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes left-in{
+        from{
+            transform: translateX(-50vw);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+
+}
