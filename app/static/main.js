@@ -96,13 +96,14 @@ $(document).ready(function(){
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 
         $('.mobile-slider').show();
+        $('.dots-custom').show();
         $('.projects').hide();
 
         $('.mobile-slider').slick({
             centreMode: true,
             centrePadding: "50px",
             slidesToShow: 1,
-            dots: false,
+            dots: true,
             arrows: false,
             adaptiveHeight: false,
             cssEase: "ease",
@@ -125,6 +126,14 @@ $(document).ready(function(){
 
             if(!$('.slick-slide').eq(currentSlide+1 % 3).hasClass("slide-animation-reverse")){
                 $('.slick-slide').eq(currentSlide+1 % 3).addClass("slide-animation-reverse");
+            }
+
+            if($('.custom-dot').eq((currentSlide+1) % 3).hasClass('in-focus-dots')){
+                $('.custom-dot').eq((currentSlide+1) % 3).removeClass("in-focus-dots");
+            }
+
+            if(!$('.custom-dot').eq((nextSlide+1) % 3).hasClass('in-focus-dots')){
+                $('.custom-dot').eq((nextSlide+1) % 3).addClass("in-focus-dots");
             }
         });
     }else{

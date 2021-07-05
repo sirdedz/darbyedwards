@@ -4,6 +4,8 @@
 :root{
     --header_height: 80px;
     --grey1: rgba(0, 0, 0, 0.05);
+    --grey2: rgba(0, 0, 0, 0.1);
+    --grey3: rgba(0, 0, 0, 0.5);
     --navy1: #26374D;
     --navy2: #3e6494;
     --navy1rgb: rgba(38, 55, 77, 1);
@@ -385,6 +387,23 @@ hr {
     animation-fill-mode: forwards;
 }
 
+.dots-custom{
+    min-height: 0.3em;
+    display: none;
+}
+
+.custom-dot{
+    display: inline-block;
+    min-height: 0.3em;
+    background-color: var(--grey2);
+    max-width: 1em;
+    top: 0;
+}
+
+.in-focus-dots{
+    background-color: var(--grey3) !important;
+}
+
 @keyframes zoom {
     from{
         transform: scale(0.98);
@@ -563,5 +582,4 @@ hr {
         padding-top: 2em;
         font-size: 1em;
     }
- 
   } 
