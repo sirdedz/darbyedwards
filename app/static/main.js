@@ -9,26 +9,36 @@ $('.carousel').carousel({
     interval: 10000
 });
 
-
+var down = false;
 function menu(){
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+
+    if(window.matchMedia('screen and (orientation: portrait)').matches){
         $(".header-left").children().each(function(){
             if($(this).is("p")){
-                if($(this).css('display') == 'none'){
-                    $(this).css("display", "grid");
+
+                if(!down){
+                    $(this).css("margin-top", "0");
+
                 }else{
-                    $(this).css("display", "none");
+                    $(this).css("margin-top", "-40%");
                 }
             }
         })
-        if($(".header-right").css('display') == 'none'){
-            $(".header-right").css("display", "flex");
+
+        if(!down){
+            $(".header-right").css("margin-top", "0");
+            $(".header-middle").css("margin-top", "0");
+
             $(".menu i").removeClass("bi-caret-down-fill");
             $(".menu i").addClass("bi-caret-up-fill");
+            down = true;
         }else{
-            $(".header-right").css("display", "none");
+            $(".header-right").css("margin-top", "-40%");
+            $(".header-middle").css("margin-top", "-40%");
+            
             $(".menu i").addClass("bi-caret-down-fill");
             $(".menu i").removeClass("bi-caret-up-fill");
+            down = false;
         }
     }
 }
@@ -85,8 +95,6 @@ $(document).ready(function(){
 
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 
-        $("#pdfviewer-web").show();
-
         $('.mobile-slider').show();
         $('.projects').hide();
 
@@ -121,7 +129,6 @@ $(document).ready(function(){
         });
     }else{
         $('.mobile-slider').hide();
-        $('#pdfviewer-mobile').hide();
     }
 });
           

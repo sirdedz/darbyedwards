@@ -42,10 +42,10 @@ body{
     line-height: var(--header_height);
     font-family: 'New Century Schoolbook', 'TeX Gyre Schola', 'serif';
     text-decoration: none;
-    color: var(--navy1);
+    color: inherit;
 }
 
-.header p:hover, a:hover, .header h3:hover{
+.header p:hover, a:hover{
     color: var(--green1);
     text-decoration: none;
     cursor: pointer;
@@ -57,6 +57,14 @@ body{
 
 .header-left{
     justify-content: flex-start;
+}
+
+.header p, .header-right a{
+    transition: all 0.8s;
+}
+
+.header p:hover, .header-right a:hover{
+    transform: scale(1.2);
 }
 
 .header-left img{
@@ -76,13 +84,18 @@ body{
     text-align: center;
     padding-right: 0;
     padding-left: 0;
-    display: flex;
+    display: block;
     align-items: center;
 }
 
 .header-right i:hover{
     cursor: pointer;
     color: var(--green1);
+}
+
+.title{
+    background-color: white;
+    z-index: 999;
 }
 
 .content{
@@ -414,7 +427,8 @@ hr {
 
 
 /*------------------- MOBILE CSS --------------------*/
-@media (hover:none), (hover:on-demand){ 
+/*@media (hover:none), (hover:on-demand){ */
+@media screen and (orientation: portrait){
 
     .header{
         background-color: white;
@@ -428,7 +442,8 @@ hr {
     }
 
     .header-left p, .header-middle, .header-right{
-        display: none;
+        margin-top: -40%;
+        transition: margin-top 1s ease;
     }
 
     .header-left{
@@ -444,6 +459,12 @@ hr {
 
     .header-middle{
         display: none;
+    }
+
+    .title:hover{
+        color: var(--green1);
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .title{
@@ -462,7 +483,7 @@ hr {
     }
 
     .menu i{
-        color: var(--navy1);
+        color: inherit;
         align-items: center;
     }
 

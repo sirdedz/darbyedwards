@@ -80,7 +80,7 @@
 
 
 /*------------------- MOBILE CSS --------------------*/
-@media (hover:none), (hover:on-demand){ 
+@media screen and (orientation: portrait){ 
     .py-container{
         margin-top: 0;
         height: auto;

@@ -68,7 +68,9 @@
 
         <div class="mobile-slider">
             <div>
-                <img src="{{ url_for('static', filename='Assets/citibank.jpg') }}" alt="Citibank Global Markets Challenge">
+                <a href="{{ url_for('citi') }}">
+                    <img src="{{ url_for('static', filename='Assets/citibank.jpg') }}" alt="Citibank Global Markets Challenge">
+                </a>
                 <div class="slider-caption">
                     <h5>Citibank Global Markets Challenge 2020</h5>
                     <p>Myself and a group of four in a competition to create a global asset portfolio with a six-month time horizon.</p>
@@ -76,7 +78,9 @@
                 </div>
             </div>
             <div>
-                <img src="{{ url_for('static', filename='Assets/logo1.jpg') }}" alt="Shark Stakes LLC">
+                <a href="{{ url_for('sharkstakes') }}">
+                    <img src="{{ url_for('static', filename='Assets/logo1.jpg') }}" alt="Shark Stakes LLC">
+                </a>
                 <div class="slider-caption">
                     <h5>SharkStakes LLC</h5>
                     <p>A web application project for University, SharkStakes is a sports quiz website with functionality for creating, completing and submitting quizzes and tracking your progress through an account system.</p>
@@ -84,7 +88,9 @@
                 </div>
             </div>
             <div>
-                <img src="{{ url_for('static', filename='Assets/game.jpg') }}" alt="Python Game">
+                <a href="{{ url_for('python_game') }}">
+                    <img src="{{ url_for('static', filename='Assets/game.jpg') }}" alt="Python Game">
+                </a>
                 <div class="slider-caption">
                     <h5>Simple Python3 Game</h5>
                     <p>This simple python game is an implementation for server-side functionality to allow up to four players per game and handle connection and disconnection correctly.</p>
