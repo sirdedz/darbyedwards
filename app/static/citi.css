@@ -1,9 +1,17 @@
 #citi-title{
-    padding: 2em;
+    padding: 0;
+    text-align: left;
+    font-size: 5em;
+}
+
+#citi-content{
+    padding: 2em 4em;
+    color:rgba(0, 0, 0, 0.6);
 }
 
 #citi-summary{
-    padding: 1em;
+    padding: 0;
+    text-align: left;
 }
 
 #citi-pdf{
@@ -59,7 +67,12 @@
 }
 
 /*------------------- MOBILE CSS --------------------*/
-@media (hover:none), (hover:on-demand){ 
+@media screen and (orientation: portrait){ 
+    #citi-title{
+        font-size: 3em;
+    }
 
-
+    #citi-content{
+        padding: 1em;
+    }
 }

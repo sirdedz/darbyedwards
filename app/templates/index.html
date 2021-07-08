@@ -5,7 +5,7 @@
 {% block content %}
     <div class="index">
         <div class="about-me">
-            <img id="profilepic" src="{{ url_for('static', filename='Assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
+            <img id="profilepic" src="{{ url_for('static', filename='/assets/temp_user.png') }}" alt="Picture" onload="imageSize()">
             <p>
                 <i class="bi bi-chat-right-text-fill" style="padding-right: 1em"></i>0413 870 180
                 <br>
@@ -31,7 +31,7 @@
                 <!-- CAROUSEL SLIDES -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ url_for('static', filename='Assets/citibank.jpg') }}" alt="Citibank Global Markets Challenge">
+                        <img src="{{ url_for('static', filename='/assets/citibank.jpg') }}" alt="Citibank Global Markets Challenge">
                         <div class="carousel-caption">
                             <h5>Citibank Global Markets Challenge</h5>
                             <p>Myself and a group of four competed in a competition to create a global asset portfolio, filled with different asset types and with a six-month time horizon.</p>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='Assets/logo1.jpg') }}" alt="Shark Stakes LLC">
+                        <img src="{{ url_for('static', filename='/assets/logo1.jpg') }}" alt="Shark Stakes LLC">
                         <div class="carousel-caption">
                             <h5>SharkStakes</h5>
                             <p>A web application project, SharkStakes is a sports quiz web app with functionality for creating, completing and submitting quizzes whilst tracking your progress through an account system.</p>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='Assets/game.jpg') }}" alt="Python Game">
+                        <img src="{{ url_for('static', filename='/assets/game.jpg') }}" alt="Python Game">
                         <div class="carousel-caption">
                             <h5>Python Game Server</h5>
                             <p>An implementation of server-side functionality for a python game which allows up to four players to play a simple tile based game whilst handling player connections and disconnections effectively.</p>

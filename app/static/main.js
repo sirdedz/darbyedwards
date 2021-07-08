@@ -69,6 +69,8 @@ function toTop(){
 	jQuery('html, body').animate({scrollTop:0},1000);
 }
 
+
+//On scroll
 $(document).scroll(function(){
     if($(window).scrollTop() >= $(window).height() && $("#totop").css('display') == 'none'){
         $("#totop").show("slow");
@@ -79,7 +81,7 @@ $(document).scroll(function(){
     }
 
     $(".py-game").children().each(function(){
-        if($(this).offset().top <= $(window).scrollTop() + $(window).height() && !$(this).hasClass(".py-title") && !$(this).hasClass(".py-right-animation") && !$(this).hasClass(".py-right-animation")){
+        if($(this).offset().top <= $(window).scrollTop() + $(window).height()*0.7 && !$(this).hasClass(".py-title") && !$(this).hasClass(".py-right-animation") && !$(this).hasClass(".py-right-animation")){
             $(this).children('.py-text-right').addClass('py-right-animation');
             $(this).children('.py-text-left').addClass('py-left-animation');
         }

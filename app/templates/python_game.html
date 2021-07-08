@@ -26,7 +26,7 @@
         </div>
 
         <div class="py-container">
-            <img src="{{ url_for('static', filename='Assets/python-game/server-listening.png') }}" alt="Shark Stakes LLC2">
+            <img src="{{ url_for('static', filename='/assets/python-game/server-listening.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
                 Once the server is running it will output the address and port it is listening on before starting a constant while loop 
                 which is constantly listening for any new socket connections, which it will also output once connected.
@@ -40,11 +40,11 @@
                 number, four tiles for their hand and a colour accordingly. The four tiles can be seen at the bottom of the screen and
                 the address and port of the other players in the bottom right corner.
             </div>
-            <img src="{{ url_for('static', filename='Assets/python-game/before-game-start.png') }}" alt="Shark Stakes LLC2">
+            <img src="{{ url_for('static', filename='/assets/python-game/before-game-start.png') }}" alt="Shark Stakes LLC2">
         </div>
 
         <div class="py-container">
-            <img src="{{ url_for('static', filename='Assets/python-game/during-game.png') }}" alt="Shark Stakes LLC2">
+            <img src="{{ url_for('static', filename='/assets/python-game/during-game.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
                 During a game the player places a selected tile from their hand onto the board where their token is. If placement of such tile
                 allows the token of another player to move as well the server will automatically move their token and let all players know.
@@ -61,11 +61,11 @@
                 the server will randomly pick four players for the game.
 
             </div>
-            <img src="{{ url_for('static', filename='Assets/python-game/spectating.png') }}" alt="Shark Stakes LLC2">
+            <img src="{{ url_for('static', filename='/assets/python-game/spectating.png') }}" alt="Shark Stakes LLC2">
         </div>
 
         <div class="py-container">
-            <img src="{{ url_for('static', filename='Assets/python-game/eliminated.png') }}" alt="Shark Stakes LLC2">
+            <img src="{{ url_for('static', filename='/assets/python-game/eliminated.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
                 The server checks for eliminations after every turn and if a player's token reaches the edge of the playing space they are eliminated and the 
                 server will notify all players. This will also occur if a player disconnects. If only one player remains the server will declare them the 

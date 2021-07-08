@@ -59,6 +59,7 @@
     border-bottom-right-radius: 50%;
     text-align: left;
     padding-right: 2em;
+    transform: translateX(-50vw);
 }
 
 .py-right-animation{
