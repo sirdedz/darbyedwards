@@ -5,20 +5,40 @@
 {% block content %}
     <div class="py-game">
         <div class="py-title">
-            <h3>About the game</h3>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <h3>Python Game Server</h3>
+            <p>
+                This is a simple Python3 implementation of server-side functionality for a tile-based game. 
+                The purpose of the implementation is to handle all messages from clients during the game, as well as handling incoming connections and disconnections. 
+                Any messages from clients are verified on the server and the server maintains all major game variables to prevent cheating.
+            </p>
+            <p>
+                The server utilises socket functionality to constantly listen to new messages from clients as well as multi-threading to simultaneously run 
+                processes for each different client.
+            </p>
+            <p>
+                Client-side functionality was provided however no documentation was included which further added to the challenge and forced thorough debugging and 
+                writing of some code level documentation. The finished product was written to fulfil a given set of requirements, with the final product receiving
+                a mark of 94%.
+            </p>
+            <p>
+                Gameplay is as follows: <br>
+            </p>
         </div>
 
         <div class="py-container">
             <img src="{{ url_for('static', filename='Assets/python-game/server-listening.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
-                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                Once the server is running it will output the address and port it is listening on before starting a constant while loop 
+                which is constantly listening for any new socket connections, which it will also output once connected.
+                Once two players have connected the server will then choose a random turn order for the game, output that order and start the game.
             </div>
         </div>
 
         <div class="py-container">
             <div class='py-text-left'>
-                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                Upon starting up the application a client is greeted with this screen. When a game starts the player is allocated a player
+                number, four tiles for their hand and a colour accordingly. The four tiles can be seen at the bottom of the screen and
+                the address and port of the other players in the bottom right corner.
             </div>
             <img src="{{ url_for('static', filename='Assets/python-game/before-game-start.png') }}" alt="Shark Stakes LLC2">
         </div>
@@ -26,13 +46,20 @@
         <div class="py-container">
             <img src="{{ url_for('static', filename='Assets/python-game/during-game.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
-                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                During a game the player places a selected tile from their hand onto the board where their token is. If placement of such tile
+                allows the token of another player to move as well the server will automatically move their token and let all players know.
+                Players are aware of when it is their turn through the indicator at the top and if they take too long to make a move the server
+                will make a valid random move for them.
             </div>
         </div>
 
         <div class="py-container">
             <div class='py-text-left'>
-                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                If a player joins when the game is in progress they sit on the spectating screen, indicated by a white background and no tiles
+                in hand. Here the server feeds them game info and ignores their messages. They are free to watch as the game progresses whilst 
+                they wait for the game to finish and a new game to start. If more than four players are connected to the server before starting a game 
+                the server will randomly pick four players for the game.
+
             </div>
             <img src="{{ url_for('static', filename='Assets/python-game/spectating.png') }}" alt="Shark Stakes LLC2">
         </div>
@@ -40,8 +67,17 @@
         <div class="py-container">
             <img src="{{ url_for('static', filename='Assets/python-game/eliminated.png') }}" alt="Shark Stakes LLC2">
             <div class='py-text-right'>
-                Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                The server checks for eliminations after every turn and if a player's token reaches the edge of the playing space they are eliminated and the 
+                server will notify all players. This will also occur if a player disconnects. If only one player remains the server will declare them the 
+                winner and a countdown of five seconds will begin before a new game is started, providing at least two players are connected to the server.
             </div>
+        </div>
+
+        <div id="git-link">
+            <a href="https://github.com/sirdedz/SocketGame">
+                <p>Access the code for this project through Github here</p>
+                <i class="bi bi-github"></i>
+            </a>
         </div>
     </div>
 
